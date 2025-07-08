@@ -2,6 +2,12 @@
 The official implementation for the ICCV 2025 paper "UMDATrack: Unified Multi-Domain Adaptive Tracking
 Under Adverse Weather Conditions".
 
+## Demo
+
+![Demo](asserts/demo.gif)
+
+![图例说明](asserts/legend.png)
+
 ## Install the environment
 
 Create and activate a conda environment:
