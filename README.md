@@ -4,7 +4,7 @@ Under Adverse Weather Conditions".
 
 ## Demo
 
-![Demo](asserts/demo.gif)
+![Demo](asserts/demo_grid.gif)
 
 ![图例说明](asserts/legend.png)
 
