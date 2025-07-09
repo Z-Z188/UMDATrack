@@ -1,12 +1,25 @@
 # UMDATrack
-The official implementation for the ICCV 2025 paper "UMDATrack: Unified Multi-Domain Adaptive Tracking
-Under Adverse Weather Conditions".
+The official implementation for the ICCV 2025 paper [_UMDATrack: Unified Multi-Domain Adaptive Tracking
+Under Adverse Weather Conditions_](https://arxiv.org/abs/2507.00648)
 
 ## Demo
 
-![Demo](asserts/demo_grid.gif)
+![Demo](assets/demo.gif)
 
-![图例说明](asserts/legend.png)
+![legend](assets/legend.png)
+
+## Introduction
+
+<p align="left">
+  <img 
+    src="assets/overview.png" 
+    alt="Overview" 
+    width="960px" 
+    style="max-width:100%; height:auto;" 
+  />
+</p>
+
+We present UMDATrack, a unified tracker that adapts to diverse weather conditions with minimal overhead. First, we leverage a text‐conditioned diffusion model to synthesize unlabeled videos under different weather prompts. Then, keeping the backbone fixed, we introduce a lightweight Domain-Customized Adapter (DCA) that quickly remaps object features to each new domain without full model updates. To further align source and target predictions, we add a Target-Aware Confidence Alignment (TCA) module based on optimal transport which enforces consistent localization confidence. With under 2 % of additional synthetic frames, UMDATrack outperforms state-of-the-art methods across both real and generated datasets, marking the first unified multi-domain adaptation tracker in the VOT community.
 
 ## Install the environment
 
@@ -70,7 +83,7 @@ ${PROJECT_ROOT}
          |-- train
          |-- val         
 ``` 
-The synthetic multi-domain datasets are now available for downloading at ([BaiduNetdisk:lite](https://pan.baidu.com/s/1Xsn45GZEI35vkv6jEQ0ZHA?pwd=wi9a))
+We use CSG(Controllable Scenario Generator) to generate synthetic multi-domain datasets.Specifically, we feed each selected frame into a text-conditioned diffusion generator (Stable Diffusion-Turbo) using prompts such as “Car in the night,” “Car in the haze,” and “Car in the rain” to produce unlabeled video frames under dark, foggy, and rainy scenarios. And the datasets will be available for downloading in the next few days.
 
 ## Training
 
@@ -93,7 +106,7 @@ python tracking/train.py --script UMDATrack --config vit_256_ep50_dark --save_di
 ```
 
 ## Evaluation
-Use your own training weights or ours([BaiduNetdisk:lite](https://pan.baidu.com/s/1Xsn45GZEI35vkv6jEQ0ZHA?pwd=wi9a)) in `$PROJECT_ROOT$/output/checkpoints/train/UMDATrack`.  
+Use your own training weights or ours([BaiduNetdisk](https://pan.baidu.com/s/1Xsn45GZEI35vkv6jEQ0ZHA?pwd=wi9a)) in `$PROJECT_ROOT$/output/checkpoints/train/UMDATrack`.  
 
 Change the corresponding values of `lib/test/evaluation/local.py` to the actual benchmark saving paths
 
@@ -108,9 +121,10 @@ python tracking/analysis_results.py # need to modify tracker configs and names
 python tracking/test.py UMDATrack vit_256_ep50_haze --dataset got10k_haze --runid 0001 --ep 50 --save_dir output
 python tracking/analysis_results.py # need to modify tracker configs and names
 ```
+Or you can also use our synthetic DTB70_haze and DTB70_rainy for evaluation.
 
 ## Acknowledgement
-Our code is built upon [OSTrack](https://github.com/botaoye/OSTrack). Also grateful for PyTracking.
+Our code is built upon [LiteTrack](https://github.com/TsingWei/LiteTrack). Thanks to [One-Step Image Translation with Text-to-Image Models](https://github.com/GaParmar/img2img-turbo) for providing the core CSG architecture and guiding our synthetic dataset creation. Also grateful for PyTracking.
 
 ## Citation
 If our work is useful for your research, please consider citing:
