@@ -19,7 +19,7 @@ Under Adverse Weather Conditions_](https://arxiv.org/abs/2507.00648)
   />
 </p>
 
-We present UMDATrack, a unified tracker that adapts to diverse weather conditions with minimal overhead. First, we leverage a text‐conditioned diffusion model to synthesize unlabeled videos under different weather prompts. Then, keeping the backbone fixed, we introduce a lightweight Domain-Customized Adapter (DCA) that quickly remaps object features to each new domain without full model updates. To further align source and target predictions, we add a Target-Aware Confidence Alignment (TCA) module based on optimal transport which enforces consistent localization confidence. With under 2 % of additional synthetic frames, UMDATrack outperforms state-of-the-art methods across both real and generated datasets, marking the first unified multi-domain adaptation tracker in the VOT community.
+We present UMDATrack, a unified tracker that adapts to diverse weather conditions with minimal overhead. First, we leverage a text‐conditioned diffusion model to synthesize unlabeled videos under different weather prompts. Then, keeping the backbone fixed, we introduce a lightweight Domain-Customized Adapter (DCA) that quickly remaps object features to each new domain without full model updates. To further align source and target predictions, we add a Target-Aware Confidence Alignment (TCA) module based on optimal transport which enforces consistent localization confidence. With under 2% of additional synthetic frames, UMDATrack outperforms state-of-the-art methods across both real and generated datasets, marking the first unified multi-domain adaptation tracker in the VOT community.
 
 ## Install the environment
 
