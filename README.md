@@ -83,7 +83,7 @@ ${PROJECT_ROOT}
          |-- train
          |-- val         
 ``` 
-We use CSG(Controllable Scenario Generator) to generate synthetic multi-domain datasets.Specifically, we feed each selected frame into a text-conditioned diffusion generator (Stable Diffusion-Turbo) using prompts such as “Car in the night,” “Car in the haze,” and “Car in the rain” to produce unlabeled video frames under dark, foggy, and rainy scenarios. And the datasets will be available for downloading in the next few days.
+As it is not trivial to collect large number of video sequences in adverse weather conditions, we first synthesize a small amount of training data to conduct domain knowledge transfer. Inspired by recent advances of text-to-image (T2I) techniques, we use CSG(Controllable Scenario Generator) to generate synthetic multi-domain datasets.Specifically, we feed each selected frame into a text-conditioned diffusion generator (Stable Diffusion-Turbo) using prompts such as “Car in the night,” “Car in the haze,” and “Car in the rain” to produce unlabeled video frames under dark, foggy, and rainy scenarios. And the datasets are now available in [BaiduNetdisk](https://pan.baidu.com/s/1sEn0E3-Kt1X5KZYYovIYYA?pwd=es5c)
 
 ## Training
 
@@ -100,13 +100,13 @@ Replace `--config` with the desired model config under `experiments/UMDATrack`. 
 
 ### The second stage for the domain-customized adapter training
 
-We perform domain adaptation for three weather conditions (dark, haze, rainy). You can find the corresponding configuration files under `experiments/UMDATrack`, and modify the config parameters there to adapt to different domains.Just use dark doamin for instance:
+We perform domain adaptation for three weather conditions (dark, haze, rainy). You can find the corresponding configuration files under `experiments/UMDATrack`, and modify the config parameters there to adapt to different domains. Just use dark doamin for instance:
 ```
 python tracking/train.py --script UMDATrack --config vit_256_ep50_dark --save_dir ./output --mode multiple --nproc_per_node 4  --use_wandb 0
 ```
 
 ## Evaluation
-Use your own training weights or ours([BaiduNetdisk](https://pan.baidu.com/s/1Xsn45GZEI35vkv6jEQ0ZHA?pwd=wi9a)) in `$PROJECT_ROOT$/output/checkpoints/train/UMDATrack`.  
+Use your own training weights or [ours](https://pan.baidu.com/s/1Xsn45GZEI35vkv6jEQ0ZHA?pwd=wi9a) in `$PROJECT_ROOT$/output/checkpoints/train/UMDATrack`.  
 
 Change the corresponding values of `lib/test/evaluation/local.py` to the actual benchmark saving paths
 
