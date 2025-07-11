@@ -1,4 +1,3 @@
-from heat_map import save_feature_map
 import torch.nn as nn
 import torch
 import torch.nn.functional as F
