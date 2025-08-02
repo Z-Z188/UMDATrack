@@ -130,7 +130,7 @@ python tracking/analysis_results.py # need to modify tracker configs and names
 - GOT10K-haze(our synthetic dataset)
 ```
 python tracking/test.py UMDATrack vit_256_ep50_haze --dataset got10k_haze --runid 0001 --ep 50 --save_dir output
-python tracking/analysis_results.py # need to modify tracker configs and names
+python lib/test/utils/transform_got10k.py # need to modify tracker configs and names
 ```
 Or you can also use our synthetic DTB70_haze and DTB70_rainy for evaluation.
 
