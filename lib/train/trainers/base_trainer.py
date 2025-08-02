@@ -198,8 +198,8 @@ class BaseTrainer:
                 # if epoch in save_epochs or (epoch >= 50 and epoch % 3 == 0):
                     if self._checkpoint_dir:
                         if self.settings.local_rank in [-1, 0]:
-                            self.save_checkpoint(stage)
-                            self.save_net_extreme_checkpoint(stage)
+                            self.save_checkpoint(stage=stage)
+                            self.save_net_extreme_checkpoint(stage=stage)
 
         print('Finished training!')
 
