@@ -98,7 +98,7 @@ As it is not trivial to collect large number of video sequences in adverse weath
 
 ## Training
 
-Download our pre-trained [foundation model and initial pseudo-labels](https://pan.baidu.com/s/1Xsn45GZEI35vkv6jEQ0ZHA?pwd=wi9a) which is based on our backbone and put it under  `$PROJECT_ROOT$/pretrained_models`.   
+Download our pre-trained foundation model and initial pseudo-labels in [BaiduNetdisk](https://pan.baidu.com/s/1Xsn45GZEI35vkv6jEQ0ZHA?pwd=wi9a) or [Google Drive](https://drive.google.com/drive/folders/1fondgxHRdglg9JZkg_UkfqqSUmhqLUA9?usp=sharing) which is based on our backbone and put it under  `$PROJECT_ROOT$/pretrained_models`.   
 Run the command below to train the model:
 
 ### The first stage for the overall training
@@ -117,7 +117,7 @@ python tracking/train.py --script UMDATrack --config vit_256_ep50_dark --save_di
 ```
 
 ## Evaluation
-Use your own training weights or [ours](https://pan.baidu.com/s/1Xsn45GZEI35vkv6jEQ0ZHA?pwd=wi9a) in `$PROJECT_ROOT$/output/checkpoints/train/UMDATrack`.  
+Use your own training weights or ours in [BaiduNetdisk](https://pan.baidu.com/s/1Xsn45GZEI35vkv6jEQ0ZHA?pwd=wi9a) or [Google Drive](https://drive.google.com/drive/folders/1fondgxHRdglg9JZkg_UkfqqSUmhqLUA9?usp=sharing) under `$PROJECT_ROOT$/output/checkpoints/train/UMDATrack`.  
 
 Change the corresponding values of `lib/test/evaluation/local.py` to the actual benchmark saving paths
 
