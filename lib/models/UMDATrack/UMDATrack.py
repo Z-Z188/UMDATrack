@@ -331,9 +331,9 @@ def build_UMDATrack(cfg, training=True, extreme=False):
             print('Load pretrained model from: ' + cfg.MODEL.PRETRAIN_FILE)
         if cfg.TRAIN.DCA:
             if extreme:
-                checkpoint_path = os.path.join(current_dir, '../../../output/checkpoints/train/UMDATrack/vit_256_ep250_all/UMDATrack_ep0250.pth.tar')
-            else:
                 checkpoint_path = os.path.join(current_dir, '../../../output/checkpoints/train/UMDATrack/vit_256_ep250_all/UMDATrack_extreme_ep0250.pth.tar')
+            else:
+                checkpoint_path = os.path.join(current_dir, '../../../output/checkpoints/train/UMDATrack/vit_256_ep250_all/UMDATrack_ep0250.pth.tar')
 
 
 
