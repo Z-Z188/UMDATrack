@@ -94,7 +94,7 @@ ${PROJECT_ROOT}
          |-- train
          |-- val         
 ``` 
-As it is not trivial to collect large number of video sequences in adverse weather conditions, we first synthesize a small amount of training data to conduct domain knowledge transfer. Inspired by recent advances of text-to-image (T2I) techniques, we use CSG(Controllable Scenario Generator) to generate synthetic multi-domain datasets.Specifically, we feed each selected frame into a text-conditioned diffusion generator (Stable Diffusion-Turbo) using prompts such as “Car in the night,” “Car in the haze,” and “Car in the rain” to produce unlabeled video frames under dark, foggy, and rainy scenarios. And the datasets are now available in [BaiduNetdisk](https://pan.baidu.com/s/1sEn0E3-Kt1X5KZYYovIYYA?pwd=es5c)
+As it is not trivial to collect large number of video sequences in adverse weather conditions, we first synthesize a small amount of training data to conduct domain knowledge transfer. Inspired by recent advances of text-to-image (T2I) techniques, we use CSG(Controllable Scenario Generator) to generate synthetic multi-domain datasets.Specifically, we feed each selected frame into a text-conditioned diffusion generator (Stable Diffusion-Turbo) using prompts such as “Car in the night,” “Car in the haze,” and “Car in the rain” to produce unlabeled video frames under dark, foggy, and rainy scenarios. And the datasets are now available in [BaiduNetdisk](https://pan.baidu.com/s/1sEn0E3-Kt1X5KZYYovIYYA?pwd=es5c) and [huggingface](https://huggingface.co/datasets/WatcherBrR0/synthetic_datasets)
 
 ## Training
 
