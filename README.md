@@ -144,7 +144,8 @@ If our work is useful for your research, please consider citing:
 @inproceedings{yao2025umdatrack,
   title={UMDATrack: Unified Multi-Domain Adaptive Tracking Under Adverse Weather Conditions},
   author={Yao, Siyuan and Zhu, Rui and Wang, Ziqi and Ren, Wenqi and Yan, Yanyang and Cao, Xiaochun},
-  booktitle={ICCV},
-  year={2025}
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025},
+  pages     = {6466--6475},
 }
 ```
